@@ -6,11 +6,12 @@ This repository contains a Jupyter notebook for generating pseudo-labels from pr
 Requirements: 
 - [DECODE framework](https://github.com/waldnerf/decode) FracTAL ResUNet model described in [Waldner et al. 2021](https://doi.org/10.3390/rs13112197)
 - [Pre-trained model weights](https://zenodo.org/doi/10.5281/zenodo.7315089) from [Wang et al. 2022](https://doi.org/10.3390/rs14225738)
+- Code and sample data contained in this repository
 
-The pseudo label selection routine grounds on predictions on unlabeled data and uses an array of quality criteria including semantic confidence, instance confidence, and object size to filter high-quality predictions which can be used for weakly supervised fine-tuning of the pre-trained model architecture. 
+The pseudo label selection routine grounds on predictions on unlabeled data and uses an array of quality criteria including semantic confidence, instance confidence, and object size to filter high-quality predictions which can be used for weakly supervised fine-tuning of the pre-trained model architecture. The notebook requires access to GDrive to store model weights, sample data, and the DECODE repository. 
 
-![workflow_pseudo](https://github.com/philipperufin/pseudo-fields/assets/38853597/f5b42910-57b8-4145-8dc4-a1ab492265e6)
+![image](https://github.com/user-attachments/assets/c776fc4d-1e3c-4068-ac84-0c218e1916c0)
 
-Our example builds on a model pre-trained in France and India, but the approach can be used for any field delineation architecture yielding pixel-level probabilities of cropland extent (for semantic confidence scores) and field boundary (basis for instance confidence scores). We use the model to identify fields in Mozambique, arguably a more complex and heterogeneous region. In our study, we find that using the 99th percentile of the semantic confidence score yields the best results, and that combining pseudo labels with human annotations results in the best performance. Pseudo labels are stored in the format needed to train the FracTAL ResUNet as described in [Wang et al. 2022](), i.e. three band raster files containing 1) cropland extent, 2) field boundaries, 3) normalized within-field distance to nearest boundary. 
+Our example builds on a model pre-trained in France and India, but the approach can be used for any field delineation architecture yielding pixel-level probabilities of cropland extent (for semantic confidence scores) and field boundary (basis for instance confidence scores). We use the model to identify fields in Mozambique, arguably a more complex and heterogeneous region. In our study, we find that using the 99th percentile of the semantic confidence score yields the best results, and that combining pseudo labels with human annotations results in the best performance. Users can define custom thresholds for testing purposes. Pseudo labels can optionally be stored in the format needed to train the FracTAL ResUNet as described in [Wang et al. 2022](https://doi.org/10.3390/rs14225738), i.e. three band raster files containing 1) cropland extent, 2) field boundaries, 3) normalized within-field distance to nearest boundary. 
 
 Test.
