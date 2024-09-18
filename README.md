@@ -1,7 +1,7 @@
 # pseudo-fields
 Generating pseudo labels for satellite-based crop field delineation
 
-This repository contains Jupyter notebooks for generating pseudo-labels from pre-trained field delineation model described in [corresponding paper](https://doi.org/10.48550/arXiv.2312.08384).
+This repository contains Jupyter notebooks for generating pseudo-labels from pre-trained field delineation model described in [corresponding paper](https://doi.org/10.1016/j.jag.2024.104149).
 
 Requirements: 
 - [DECODE framework](https://github.com/waldnerf/decode) FracTAL ResUNet model described in [Waldner et al. 2021](https://doi.org/10.3390/rs13112197)
